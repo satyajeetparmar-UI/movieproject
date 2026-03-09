@@ -1,0 +1,395 @@
+You are a senior full-stack architect and product engineer.
+
+Your task is to generate a PRODUCTION-READY full-stack movie discovery platform similar to Netflix / IMDB with a clean architecture, scalable backend, modern UI, and best practices.
+
+The application must be modular, scalable, and follow real-world engineering standards.
+
+--------------------------------------------------
+
+PROJECT NAME
+MovieVerse – Full Stack Movie Discovery Platform
+
+--------------------------------------------------
+
+TECH STACK
+
+Frontend
+- React (Vite)
+- Redux Toolkit
+- React Router DOM
+- Axios
+- TailwindCSS
+- Framer Motion (animations)
+- React Infinite Scroll Component
+
+Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+- bcrypt
+
+API
+- TMDB API
+
+--------------------------------------------------
+
+MAIN FEATURES
+
+Users can:
+
+• Browse trending movies
+• Discover popular movies and TV shows
+• Search movies, actors, TV shows
+• Watch movie trailers
+• Save favorites
+• Track watch history
+• Login / Signup
+• Responsive mobile experience
+
+Admins can:
+
+• Add movies
+• Edit movies
+• Delete movies
+• View users
+• Ban users
+
+--------------------------------------------------
+
+ARCHITECTURE
+
+Generate the project using this folder structure:
+
+movie-platform
+
+frontend
+    src
+        app
+        components
+        pages
+        features
+        hooks
+        layouts
+        services
+        redux
+        utils
+        assets
+
+backend
+    config
+    controllers
+    models
+    routes
+    middleware
+    services
+    utils
+
+--------------------------------------------------
+
+FRONTEND REQUIREMENTS
+
+Build the following pages.
+
+Home Page
+
+Sections:
+
+• Trending Movies
+• Popular Movies
+• TV Shows
+• Top Rated
+• Infinite scroll movie grid
+
+Movie Cards must show:
+
+• Poster
+• Title
+• Rating
+• Release year
+
+Hover effect:
+Show quick actions:
+- Play trailer
+- Add to favorites
+
+--------------------------------------------------
+
+MOVIE DETAILS PAGE
+
+Display:
+
+• Poster
+• Title
+• Overview
+• Release date
+• Genres
+• Runtime
+• Rating
+
+Trailer section
+
+Embed YouTube player inside modal.
+
+If trailer unavailable show message:
+
+"Trailer for this movie is currently unavailable."
+
+UI must not break.
+
+--------------------------------------------------
+
+SEARCH SYSTEM
+
+Search must support:
+
+• Movies
+• TV shows
+• Actors
+
+Features:
+
+• Debounced input (300ms)
+• Live results dropdown
+• Highlight results
+
+--------------------------------------------------
+
+FAVORITES SYSTEM
+
+Users can:
+
+Add movie to favorites
+Remove movie
+
+Favorite movies must persist in database.
+
+Favorites page must show saved movies.
+
+--------------------------------------------------
+
+WATCH HISTORY
+
+Whenever user:
+
+• opens movie details
+• watches trailer
+
+Save entry in watch history.
+
+User can view history page.
+
+--------------------------------------------------
+
+AUTHENTICATION
+
+Build authentication system with JWT.
+
+User abilities:
+
+Signup
+Login
+Logout
+
+Passwords must be hashed using bcrypt.
+
+Protected routes:
+
+Favorites
+History
+Admin panel
+
+--------------------------------------------------
+
+ADMIN DASHBOARD
+
+Create separate admin panel.
+
+Admin abilities:
+
+Add movie
+Edit movie
+Delete movie
+View users
+Ban users
+
+Movie form fields:
+
+title
+posterUrl
+description
+movieId
+releaseDate
+trailerUrl
+genre
+category
+
+Trailer must render via YouTube embed.
+
+--------------------------------------------------
+
+BACKEND API DESIGN
+
+Auth
+
+POST /api/auth/signup
+POST /api/auth/login
+
+Movies
+
+GET /api/movies/trending
+GET /api/movies/popular
+GET /api/movies/:id
+
+Favorites
+
+POST /api/favorites
+GET /api/favorites
+DELETE /api/favorites/:movieId
+
+History
+
+GET /api/history
+POST /api/history
+
+Admin
+
+POST /api/admin/movies
+PUT /api/admin/movies/:id
+DELETE /api/admin/movies/:id
+GET /api/admin/users
+PATCH /api/admin/ban-user/:id
+
+--------------------------------------------------
+
+DATABASE MODELS
+
+User
+
+name
+email
+password
+role (user/admin)
+isBanned
+createdAt
+
+Movie
+
+title
+poster
+description
+movieId
+releaseDate
+genre
+category
+trailerLink
+
+Favorite
+
+userId
+movieId
+
+WatchHistory
+
+userId
+movieId
+watchedAt
+
+--------------------------------------------------
+
+ERROR HANDLING
+
+Handle missing data gracefully.
+
+Missing poster
+→ show placeholder image
+
+Missing description
+→ "Description not available"
+
+Missing trailer
+→ "Trailer not available"
+
+App must never crash.
+
+--------------------------------------------------
+
+PERFORMANCE OPTIMIZATION
+
+Implement:
+
+• Lazy loading
+• Debouncing
+• Redux Toolkit caching
+• Infinite scrolling
+• Optimized API requests
+
+--------------------------------------------------
+
+UI DESIGN
+
+Design should look modern like Netflix.
+
+Requirements:
+
+• Dark UI theme
+• Glassmorphism cards
+• Smooth hover animations
+• Skeleton loaders
+• Mobile responsive grid
+
+Use TailwindCSS utilities.
+
+--------------------------------------------------
+
+BONUS FEATURES
+
+Also implement:
+
+Dark / Light mode toggle
+Genre filters
+Rating badges
+Watchlist
+Bookmark movies
+
+--------------------------------------------------
+
+DELIVERABLES
+
+Generate the following:
+
+1. Full folder structure
+2. Backend server code
+3. MongoDB models
+4. API controllers
+5. Middleware
+6. React frontend
+7. Redux slices
+8. API service layer
+9. Environment variable template
+10. README with setup steps
+
+--------------------------------------------------
+
+INSTRUCTIONS
+
+Write clean, modular, production-level code.
+
+Use comments to explain logic.
+
+Ensure the project can run using:
+
+Frontend:
+npm install
+npm run dev
+
+Backend:
+npm install
+npm run dev
+
+--------------------------------------------------
+
+OUTPUT
+
+Provide the complete project code in logical order starting with backend then frontend.
