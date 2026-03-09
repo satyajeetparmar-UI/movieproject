@@ -6,10 +6,10 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
-    port: 3000,
+    port: 'https://movieverse-frontend-r198.onrender.com',
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1:5000',
+        target: 'https://movieverse-9fz4.onrender.com',
         changeOrigin: true,
         secure: false, // Prevents SSL alert internal error
       },
