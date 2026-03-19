@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Update base URL if needed for production
-const API_URL = '/api';
+const API_URL = 'https://movieverse-9fz4.onrender.com/';
 
 const api = axios.create({
   baseURL: API_URL,
